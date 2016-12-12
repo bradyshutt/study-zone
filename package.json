@@ -3,13 +3,10 @@
   "version": "1.0.0",
   "description": "QuickStart package.json from the documentation, supplemented with testing support",
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
-    "e2e": "tsc && concurrently \"http-server -s\" \"protractor protractor.config.js\" --kill-others --success first",
+    "start": "tsc && concurrently \"tsc -w\" \"node server\" ",
     "lint": "tslint ./app/**/*.ts -t verbose",
     "lite": "lite-server",
-    "pree2e": "webdriver-manager update",
-    "test": "tsc && concurrently \"tsc -w\" \"karma start karma.conf.js\"",
-    "test-once": "tsc && karma start karma.conf.js --single-run",
+    "test": "tsc && tape test/*.js | faucet",
     "tsc": "tsc",
     "tsc:w": "tsc -w"
   },
@@ -26,10 +23,13 @@
     "@angular/platform-browser-dynamic": "~2.3.0",
     "@angular/router": "~3.3.0",
     "angular-in-memory-web-api": "~0.1.17",
-    "systemjs": "0.19.40",
+    "body-parser": "^1.15.2",
     "core-js": "^2.4.1",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.0.0-rc.4",
+    "systemjs": "0.19.40",
     "zone.js": "^0.7.2"
   },
   "devDependencies": {

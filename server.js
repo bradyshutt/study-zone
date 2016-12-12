@@ -1,11 +1,15 @@
 'use strict';
 
 const test = require('tape');
+const express = require('express');
+const app = express();
 
-const http = require('http');
+app.get('', (req, res) => {
+   res.end('holla!');
+})
 
-http.createServer((req, res) => {
-   res.end('hello!');
-}).listen(3000);
+app.listen(3000);
+
+
 
    
