@@ -1,0 +1,17 @@
+{
+  "name": "study-zone",
+  "description": "QuickStart package.json from the documentation, supplemented with testing support",
+  "main": "",
+  "authors": [
+    "Brady Shutt <bradyshutt@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/bradyshutt/study-zone",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
