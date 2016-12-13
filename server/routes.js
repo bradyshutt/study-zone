@@ -2,20 +2,17 @@
 
 const User = require('./models/user');
 const config = require('../config');
+const userRoutes = require('./routes/user-routes');
+const apiRouter = require('express').Router();
 
-module.exports = function (app) {
 
-  app.get('/api/users', (req, res) => {
-    User.find()
-       .then(res.json)
-       .catch(res.send)
+apiRouter.get('/', (req, res) => {
+  res.json({
+    message: 'welcome to the API! :-)'
   });
+});
 
-  app.get('', (req, res) => {
-    res.sendFile(config.indexFile)
-  })
-
-};
+apiRouter.use('/users', userRoutes);
 
 
-
+module.exports = apiRouter;

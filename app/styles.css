@@ -1,0 +1,23 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    overflow-y: scroll;
+    background-color: aliceblue;
+}
+
+h1 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+}
+
+.nopadding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+}

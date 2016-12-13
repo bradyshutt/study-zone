@@ -7,6 +7,5 @@ module.exports = {
   db: {
     url: 'mongodb://localhost/study-zone'
   },
-  indexFile: path.join(__dirname, 'index.html')
-
+  indexFile: path.join(__dirname, '/index.html')
 };

@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "QuickStart package.json from the documentation, supplemented with testing support",
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"node server\" ",
-    "lint": "tslint ./public/**/*.ts -t verbose",
+    "start": "tsc && concurrently \"tsc -w\" \"nodemon server\" ",
+    "lint": "tslint ./app/**/*.ts -t verbose",
     "lite": "lite-server",
     "test": "tsc && tape test/*.js | faucet",
     "tsc": "tsc",
@@ -29,6 +29,7 @@
     "express": "^4.14.0",
     "mongoose": "^4.7.2",
     "morgan": "^1.7.0",
+    "nodemon": "^1.11.0",
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.0.0-rc.4",
     "systemjs": "0.19.40",
