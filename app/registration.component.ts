@@ -11,13 +11,17 @@ import { Component } from '@angular/core';
       <div class="row body-row">
         <div class="col-sm-6">
           <h3>What is StudyZone?</h3>
-          <p>StudyZone lets students easily communicate with their fellow classmates about things like homework, due dates, or any relevant course material, through a simple online group messaging system.</p>
+          <p>StudyZone lets students easily communicate with their fellow classmates 
+             about things like homework, due dates, or any relevant course material,
+             through a simple online group messaging system.</p>
           
           <div class="points">
           
             <div class="col-sm-6 col-xs-12 point">
               <p class="main">Add classes by your specific section number.</p>
-              <p class="details">You'll automatically be added to three group chats: One for your specific section, one for all sections with that professor, and one for the all sections.</p>
+              <p class="details">You'll automatically be added to three group chats:
+                 One for your specific section, one for all sections with that professor,
+                 and one for the all sections.</p>
             </div>
             
             <div class="col-sm-6 col-xs-12 point">
@@ -27,7 +31,8 @@ import { Component } from '@angular/core';
             
             <div class="col-sm-6 col-xs-12 point">
               <p class="main">Say thanks!</p>
-              <p class="details">If someone answered one of your questions, just press the "give thanks" button near their name to let them know that you appreciate their help. </p>
+              <p class="details">If someone answered one of your questions, just press the "give thanks"
+                 button near their name to let them know that you appreciate their help. </p>
             </div>
             
             <div class="col-sm-6 col-xs-12 point">
