@@ -5,15 +5,17 @@ import { Component } from '@angular/core';
   template: `
     <div class="container-fluid header">
       <div class="row header-row">
-        <div class="col-xs-12 header-col nopadding ">
+        <div class="col-xs-12 header-col">
           <h1>StudyZone</h1>
-          <div class="login-wrapper">
-            <form action="http://google.com" class="form-inline">
+          <form action="http://google.com" class="form-inline login-form">
+            <div class="form-group">
               <input type="text" class="form-control form-control-sm" id="username" placeholder="Username">
-              <input type="text" class="form-control form-control-sm" id="password" placeholder="Password">
-              <input type="submit" class="btn btn-submit btn-sm" value="Login">
-            </form>
-          </div>
+              <input type="password" class="form-control form-control-sm" id="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-submit btn-sm text-right">Login</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -22,7 +24,7 @@ import { Component } from '@angular/core';
   `,
   styles: [`
     .header {
-        min-width: 750px;
+        min-width: 486px;
     }
     .header-col {
         background-color: #336697;
@@ -32,25 +34,37 @@ import { Component } from '@angular/core';
         align-items: center;
     }
     .header h1 {
-        padding: 10px;
-        text-shadow: 2px 1px 5px #000;  
+        padding: 10px 10px 0 10px;
+        text-shadow: 1px 1px 0px #222;  
         color: #DAEEFF;
         font-family: Arial, Helvetica, sans-serif;
         font-weight: 900;
     }
-    .login-wrapper {
-        display: inline-block;
-        padding-right: 10px;
+    .login-form {
+        display: flex;
+        justify-content: flex-end;
     }
-    
-    .login-wrapper input {
+    .login-form input {
+        border-radius: 0 !important;
     }
-    
-    .login-wrapper button {
-    
+    .login-form div {
+        vertical-align: middle;
+        margin: 0 3px;
     }
-    
-
+    @media (max-width: 675px) {
+        .login-form {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .login-form div {
+            display: inline-block;
+            margin: 0 3px;
+        }
+        .login-form div input {
+            display: block;
+        }
+    }
 
   `]
 })

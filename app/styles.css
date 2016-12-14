@@ -8,6 +8,7 @@
 body {
     overflow-y: scroll;
     background-color: aliceblue;
+    min-width: 486px;
 }
 
 h1 {

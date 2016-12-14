@@ -7,60 +7,77 @@ import { Component } from '@angular/core';
   selector: 'registration-component',
 
   template: `
-    <div class="main-content container">
-      <div class="row">
-        <h3 class="join-title">Join StudyZone</h3>
-        <h5 class="join-sub-title">Registration is free and easy!</h5>
-      </div>
-      <div class="row">
-        <div class="col-sm-8">
-        
-          <form>
+    <div class="main-content container-fluid">
+      <div class="row body-row">
+        <div class="col-sm-6">
+          <h3>What is StudyZone?</h3>
+          <p>StudyZone lets students easily communicate with their fellow classmates about things like homework, due dates, or any relevant course material, through a simple online group messaging system.</p>
           
-            <div class="form-group row">
-              <div class="col-xs-6 first-name-input">
-                <input type="text" class="form-control" id="first-name" placeholder="First name">
-              </div>
-              <div class="col-xs-6 last-name-input">
-                <input type="text" class="form-control" id="last-name" placeholder="Last name">
-              </div>
+          <div class="points">
+          
+            <div class="col-sm-6 col-xs-12 point">
+              <p class="main">Add classes by your specific section number.</p>
+              <p class="details">You'll automatically be added to three group chats: One for your specific section, one for all sections with that professor, and one for the all sections.</p>
             </div>
             
-            <div class="form-group row">
-              <div class="col-sm-12">
-                <input type="email" class="form-control" id="email" placeholder="Email">
-              </div>
+            <div class="col-sm-6 col-xs-12 point">
+              <p class="main">Make sure your question doesn't get forgotten.</p>
+              <p class="details">When a question is asked, it's pinned to the side of the chat until it's answered or removed.</p>
             </div>
             
-            <div class="form-group row">
-              <div class="col-sm-12">
-                <input type="text" class="form-control" id="username" placeholder="Username">
-              </div>
+            <div class="col-sm-6 col-xs-12 point">
+              <p class="main">Say thanks!</p>
+              <p class="details">If someone answered one of your questions, just press the "give thanks" button near their name to let them know that you appreciate their help. </p>
             </div>
             
-            <div class="form-group row">
-              <div class="col-sm-12">
-                <input type="password" class="form-control" id="password" placeholder="Password">
-              </div>
+            <div class="col-sm-6 col-xs-12 point">
+              <p class="main">It's always a competition.</p>
+              <p class="details">You can see who the most helpful people are by looking at how many times they've been thanked.</p>
             </div>
             
-            <div class="form-group row">
-              <div class="col-sm-12">
-                <input type="password" class="form-control" id="password-confirm" placeholder="Confirm password">
-              </div>
-            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 clearfix">
+          <div class="registration-wrapper">
+            <h3 class="join-title">Join StudyZone</h3>
+            <p class="join-sub-title">Registration is free and easy!</p>
+            <form>
             
-            <div class="form-group row">
-              <div class="col-xs-8"></div>
-              <div class="col-xs-4">
+              <div class="form-group row">
+                <div class="col-xs-6 first-name-input">
+                  <input type="text" class="form-control" id="first-name" placeholder="First name">
+                </div>
+                <div class="col-xs-6 last-name-input">
+                  <input type="text" class="form-control" id="last-name" placeholder="Last name">
+                </div>
+              </div>
+              
+              <div class="form-group row">
+                <div class="col-sm-12">
+                  <input type="email" class="form-control" id="email" placeholder="Email">
+                </div>
+              </div>
+              
+              <div class="form-group row">
+                <div class="col-xs-12">
+                  <input type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+              </div>
+              
+              <div class="form-group row">
+                <div class="col-xs-12">
+                  <input type="password" class="form-control" id="password-confirm" placeholder="Confirm password">
+                </div>
+              </div>
+              
+              <div class="text-xs-right">
                 <button type="submit" class="btn btn-primary">Sign Up</button>
               </div>
-            </div>
-            
-          </form>
-        
+            </form>
+          </div>
         
         </div>
+        
       </div>
     </div>
   `,
@@ -69,20 +86,56 @@ import { Component } from '@angular/core';
         margin: 25px 0 0 20px;
         padding-left: 20px;
     }
-    .join-sub-title {
-        padding-bottom: 10px;
+    .body-row h3 {
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    
     }
-    .first-name-input {
-        padding-right: 5px;
+    @media (max-width: 576px) {
+        .body-row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        } 
+        .body-row > div:first-of-type {
+            order: 1;
+        }
     }
-    .last-name-input {
-        padding-left: 5px;
+    .join-sub-title { 
+        margin-right: 10px;
     }
-    .form-group.row {
-        margin-bottom: 8px;
+    .registration-wrapper {
+        max-width: 400px;
+        float: right;
+        margin-right: 10px;
+    }
+    .points {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .point {
+        display: inline-block;
+        min-width: 250px;
+        margin-bottom: 15px; 
+        padding: 10px;
+        line-height: 1.2em;
+    }
+    .point .main {
+        font-weight: 900;
+        font-size: 1.2em;
+    }
+    .point .details {
+        text-align: justify;
     }
     
     
+    @media (min-width: 1080px) {
+    }
+    .point p {
+        margin: 0px;
+    }
 
   `]
 })
