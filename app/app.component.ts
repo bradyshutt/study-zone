@@ -14,8 +14,10 @@ import { AccountService } from './account.service';
           <h1>StudyZone</h1>
           <form action="http://google.com" class="form-inline login-form">
             <div class="form-group">
-              <input type="text" [(ngModel)]="loginData.username" name="username" class="form-control form-control-sm" id="username" placeholder="Username">
-              <input type="password" [(ngModel)]="loginData.password" name="password" class="form-control form-control-sm" id="password" placeholder="Password">
+              <input type="text" [(ngModel)]="loginData.username" name="username" class="form-control form-control-sm" 
+                id="username" placeholder="Username">
+              <input type="password" [(ngModel)]="loginData.password" name="password" 
+                class="form-control form-control-sm" id="password" placeholder="Password">
             </div>
             <div class="form-group">
               <button type="submit" (click)="submitLogin()" class="btn btn-submit btn-sm text-right">Login</button>
