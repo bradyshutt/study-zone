@@ -1,4 +1,9 @@
+'use strict';
+
 import { Component } from '@angular/core';
+import { AccountService } from './account.service';
+
+
 
 @Component({
   selector: 'my-app',
@@ -9,11 +14,13 @@ import { Component } from '@angular/core';
           <h1>StudyZone</h1>
           <form action="http://google.com" class="form-inline login-form">
             <div class="form-group">
-              <input type="text" class="form-control form-control-sm" id="username" placeholder="Username">
-              <input type="password" class="form-control form-control-sm" id="password" placeholder="Password">
+              <input type="text" [(ngModel)]="loginData.username" name="username" class="form-control form-control-sm" 
+                id="username" placeholder="Username">
+              <input type="password" [(ngModel)]="loginData.password" name="password" 
+                class="form-control form-control-sm" id="password" placeholder="Password">
             </div>
             <div class="form-group">
-              <button type="submit" class="btn btn-submit btn-sm text-right">Login</button>
+              <button type="submit" (click)="submitLogin()" class="btn btn-submit btn-sm text-right">Login</button>
             </div>
           </form>
         </div>
@@ -23,9 +30,6 @@ import { Component } from '@angular/core';
     
   `,
   styles: [`
-    .header {
-        min-width: 486px;
-    }
     .header-col {
         background-color: #336697;
         border-bottom: 4px outset #6396CA;
@@ -44,28 +48,44 @@ import { Component } from '@angular/core';
         display: flex;
         justify-content: flex-end;
     }
-    .login-form input {
-        border-radius: 0 !important;
+    .login-form input, button {
+        border-radius: 1px !important;
     }
     .login-form div {
         vertical-align: middle;
         margin: 0 3px;
     }
-    @media (max-width: 675px) {
+    .login-form .form-group input {
+    }
+    /*@media (max-width: 675px) {*/
+    /*@media (max-width: 600px) {*/
         .login-form {
             display: flex;
             justify-content: flex-end;
             align-items: center;
         }
         .login-form div {
-            display: inline-block;
+            display: inline-flex;
             margin: 0 3px;
         }
         .login-form div input {
             display: block;
         }
-    }
+    /*}*/
 
   `]
 })
-export class AppComponent  { name = 'Angular'; }
+export class AppComponent  {
+  loginData: any = { };
+  name = 'Angular';
+
+  constructor( private accountService: AccountService ) {};
+
+  submitLogin() {
+    console.log('username: ' + this.loginData.username);
+    console.log('password: ' + this.loginData.password);
+  }
+
+
+
+}

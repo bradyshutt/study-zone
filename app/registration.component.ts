@@ -21,7 +21,7 @@ import { Component } from '@angular/core';
               <p class="main">Add classes by your specific section number.</p>
               <p class="details">You'll automatically be added to three group chats:
                  One for your specific section, one for all sections with that professor,
-                 and one for the all sections.</p>
+                 and one for that entire course.</p>
             </div>
             
             <div class="col-sm-6 col-xs-12 point">
@@ -46,7 +46,7 @@ import { Component } from '@angular/core';
           <div class="registration-wrapper">
             <h3 class="join-title">Join StudyZone</h3>
             <p class="join-sub-title">Registration is free and easy!</p>
-            <form>
+            <form class="registration-form">
             
               <div class="form-group row">
                 <div class="col-xs-6 first-name-input">
@@ -134,14 +134,21 @@ import { Component } from '@angular/core';
     .point .details {
         text-align: justify;
     }
-    
-    
-    @media (min-width: 1080px) {
-    }
     .point p {
         margin: 0px;
     }
-
+    .registration-form div {
+        margin-bottom: 2px;
+    }
+    .registration-form input, button {
+        border-radius: 1px !important;
+    }
+    .last-name-input {
+        padding-left: 2px;
+    }
+    .first-name-input {
+        padding-right: 2px;
+    }
   `]
 })
 
