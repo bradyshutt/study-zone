@@ -4,6 +4,7 @@
   "description": "QuickStart package.json from the documentation, supplemented with testing support",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"nodemon server\" ",
+    "start-production": "node server 80",
     "lint": "tslint ./app/**/*.ts -t verbose",
     "lite": "lite-server",
     "test": "tsc && tape test/*.js | faucet",

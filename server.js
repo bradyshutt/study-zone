@@ -4,13 +4,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
-
 const path = require('path');
 
 const config = require('./config');
 const apiRouter = require('./server/routes');
 
-const port = global.process.env.PORT || 3000;
+const port = process.argv[2] || global.process.env.PORT || 3000;
 const app = express();
 
 mongoose.connect(config.db.url);
